@@ -7,50 +7,52 @@ using namespace std;
 
 int main()
 {
-	loopAndDoStuff(1500);
+	// *************************************************************************************
+	// Binary Numbers
+	// *************************************************************************************
 
-	// test our helpers
-	short test = 5678;
-	printOneShort(test);
-	printTwoShorts(test, test);
+	// run a loop to test cond breakpoints
+	// doStuff(1200);
+
+	// test helper methods - refactored to add some labeling and make main a little cleaner
+	short test = 7890;
+	printOneShort("Testing", test);
 	cout << "\n\n\n";
 
-	// setup data to test bitwise ops
-	short test2 = 11110000; // this is an int
-	printOneShort(test2);
+	short test2 = 11110000; // bad -- overflow & interpreted as an int
+	printOneShort("Bad init", test2);
 	cout << "\n\n\n";
 
-	short a = 0b11110000; // use the literal as binary -- 0b
-	short b = 0b10101010; // use the literal as binary -- 0b
+	short a = 0b11110000; // 0b --- interpret as binary
+	short b = 0b10101010;
 	printTwoShorts(a, b);
 	cout << "\n\n\n";
 
-	// Boolean AND -- &&
-	// if (true && false) {}
+	// *************************************************************************************
+	// Bitwise AND and OR
+	// *************************************************************************************
+
 
 	// Bitwise AND - &
-	// If BOTH bits are 1, resulting bit is 1.
+	// If BOTH bits are 1, the resulting bit is 1. Otherwise 0.
 	// 1 1 1 1 0 0 0 0
 	// 1 0 1 0 1 0 1 0
-	// ~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~
 	// 1 0 1 0 0 0 0 0
-	cout << "*** Bitwise AND - & ***" << endl;
+	cout << "Bitwise AND - &" << endl;
 	printTwoShorts(a, b);
-	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
-	printOneShort(a&b);
+	printOneShort("a & b", a & b);
 	cout << "\n\n\n";
 
 	// Bitwise OR - |
-	// If EITHER bit is 1, result bit is 1.
+	// If EITHER bit is 1, resulting bit is 1. Otherwise 0.
 	// 1 1 1 1 0 0 0 0
 	// 1 0 1 0 1 0 1 0
-	// ~~~~~~~~~~~~~~~
+	// ~~~~~~~~~~~~~~~~
 	// 1 1 1 1 1 0 1 0
-	cout << "*** Bitwise OR - | ***" << endl;
+	cout << "Bitwise OR - |" << endl;
 	printTwoShorts(a, b);
-	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
-	printOneShort(a | b);
+	printOneShort("a | b", a | b);
 	cout << "\n\n\n";
-
 
 }

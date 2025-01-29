@@ -3,19 +3,17 @@
 #include "functions.h"
 using namespace std;
 
-void printOneShort(short a)
+void printOneShort(const char label[], short num)
 {
-	cout << "Short A\t\t\tDecimal: " << a;
-	cout << "\t\tBinary: " << bitset<16>(a) << endl;
+	cout << label << "\t\t\tDecimal: " << num;
+	cout << "\t\tBinary: " << bitset<16>(num) << endl;
 }
 
 
 void printTwoShorts(short a, short b)
 {
-	cout << "Short A\t\t\tDecimal: " << a;
-	cout << "\t\tBinary: " << bitset<16>(a) << endl;
-	cout << "Short B\t\t\tDecimal: " << b;
-	cout << "\t\tBinary: " << bitset<16>(b) << endl;
+	printOneShort("A", a);
+	printOneShort("B", b);
 }
 
 void doStuff(int numTimes)

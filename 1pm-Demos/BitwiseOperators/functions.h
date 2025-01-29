@@ -1,8 +1,7 @@
 #pragma once
 
-void printOneShort(short a);
+void printOneShort(const char label[], short num);
 
 void printTwoShorts(short a, short b);
 
-void loopAndDoStuff(short numTimes);
-
+void doStuff(int numTimes);

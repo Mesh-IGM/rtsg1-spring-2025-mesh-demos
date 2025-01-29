@@ -7,15 +7,20 @@ using namespace std;
 
 int main()
 {
-	doStuff(1200);
+	// *************************************************************************************
+	// Binary Numbers
+	// *************************************************************************************
 
-	// test helper methods
+	// run a loop to test cond breakpoints
+	// doStuff(1200);
+
+	// test helper methods - refactored to add some labeling and make main a little cleaner
 	short test = 7890;
-	printOneShort(test);
+	printOneShort("Testing", test);
 	cout << "\n\n\n";
 
 	short test2 = 11110000; // bad -- overflow & interpreted as an int
-	printTwoShorts(test, test2);
+	printOneShort("Bad init", test2);
 	cout << "\n\n\n";
 
 	short a = 0b11110000; // 0b --- interpret as binary
@@ -23,10 +28,11 @@ int main()
 	printTwoShorts(a, b);
 	cout << "\n\n\n";
 
+	// *************************************************************************************
+	// Bitwise AND and OR
+	// *************************************************************************************
 
-	// Boolean AND - &&
-	// if (true && false) {} 
-	
+
 	// Bitwise AND - &
 	// If BOTH bits are 1, the resulting bit is 1. Otherwise 0.
 	// 1 1 1 1 0 0 0 0
@@ -35,8 +41,7 @@ int main()
 	// 1 0 1 0 0 0 0 0
 	cout << "Bitwise AND - &" << endl;
 	printTwoShorts(a, b);
-	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
-	printOneShort(a & b);
+	printOneShort("a & b", a & b);
 	cout << "\n\n\n";
 
 	// Bitwise OR - |
@@ -47,8 +52,7 @@ int main()
 	// 1 1 1 1 1 0 1 0
 	cout << "Bitwise OR - |" << endl;
 	printTwoShorts(a, b);
-	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
-	printOneShort(a | b);
+	printOneShort("a | b", a | b);
 	cout << "\n\n\n";
 
 }
