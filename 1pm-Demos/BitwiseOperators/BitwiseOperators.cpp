@@ -5,6 +5,8 @@
 #include "functions.h"
 using namespace std;
 
+bool resolveCollision(short objLayer, short collisionMask);
+
 int main()
 {
 	// *************************************************************************************
@@ -111,7 +113,7 @@ int main()
 	cout << "\n\n\n";
 
 	// *************************************************************************************
-	// Usage example 1
+	// Usage example 1 - xor swap
 	// *************************************************************************************
 
 	short val1 = 0b1111000011110000;
@@ -147,4 +149,55 @@ int main()
 	printOneShort("val1", val1);
 	printOneShort("val2", val2);
 
+	// *************************************************************************************
+	// Usage example 2 - collision masking
+	// *************************************************************************************
+
+	//			B I P
+	// Player   x x x
+	// Items    x   -
+	// Bullets  x - -
+
+	char playerLyrStr[] = "Player";
+	/* playerCollision = {"Player", "Items", "Bullets"}  */
+	int playerLyrInt = 0;
+	int playerCollisionInts[] = { 0, 1, 2 };
+
+	//                    -BIP
+	short playerLayer = 0b0001;
+	short  itemsLayer = 0b0010;
+	short bulletLayer = 0b0100;
+
+	// Pretend :)
+	// Collision happens. We know: 
+	// - layer of each object
+	// - what other layers each cares about
+
+	//                   -BIP
+	short playerMask = 0b0111; // players care about everything
+	short   itemMask = 0b0101; // items care about bullets and players
+	short bulletMask = 0b0101; // bullets care about other bullets and player
+
+	// 0001 & 0110 --> 0000
+
+	cout << "Player vs. Bullet: " << resolveCollision(bulletLayer, playerMask) << endl;
+	cout << "Player vs. Item: " << resolveCollision(itemsLayer, playerMask) << endl;
+	cout << "Player vs. Player: " << resolveCollision(playerLayer, playerMask) << endl;
+	cout << "\n";
+	cout << "Bullet vs. Bullet: " << resolveCollision(bulletLayer, bulletMask) << endl;
+	cout << "Bullet vs. Item: " << resolveCollision(itemsLayer, bulletMask) << endl;
+	cout << "Bullet vs. Player: " << resolveCollision(playerLayer, bulletMask) << endl;
+	cout << "\n";
+	cout << "Item vs. Bullet: " << resolveCollision(bulletLayer, itemMask) << endl;
+	cout << "Item vs. Item: " << resolveCollision(itemsLayer, itemMask) << endl;
+	cout << "Item vs. Player: " << resolveCollision(playerLayer, itemMask) << endl;
+	cout << "\n";
+
+}
+
+
+bool resolveCollision(short targetObjLayer, short collisionMask)
+{
+	// is the object something I care about?
+	return (targetObjLayer & collisionMask); // 0 == false // != 0;
 }
