@@ -3,6 +3,14 @@
 #include "functions.h"
 using namespace std;
 
+// "do I care?"
+bool resolveCollision(short targetObjLayer, short objMask)
+{
+	// 0010 & 0011 --> 0010 
+	// 0010 & 1100 --> 0000
+	return (targetObjLayer & objMask); // != 0;
+}
+
 void printOneShort(const char label[], short num)
 {
 	cout << label << "\t\t\tDecimal: " << num;

@@ -96,7 +96,8 @@ int main()
 	cout << "\n\n\n";
 
 	// *************************************************************************************
-	// Example 1
+	// Example 1 - xor swap
+	// *************************************************************************************
 
 	short val1 = 0b11110000; // 240
 	short val2 = 0b10101010; // 170
@@ -134,7 +135,42 @@ int main()
 	printOneShort("val2", val2);
 
 
+	// *************************************************************************************
+	// Example 2 - collisions
+	// *************************************************************************************
+	
+	//			P T E
+	// Enemy	x x
+	// Terrain  
+	// Player     x x
 
+	char enemyLyrStr[] = "Enemy";
+	/* enemyCollisionStr -- { "Terrain", "Player"} */
 
+	int enemyLyrInt = 0;
+	int enemyCollisionInts[] = {1, 2};
+
+	//			  		   -PTE
+	short   enemyLayer = 0b0001;
+	short terrainLayer = 0b0010;
+	short  playerLayer = 0b0100;
+
+	// need to store layers each layer type "cares about"
+	//			  	      -PTE
+	short   enemyMask = 0b0110; // players & terrain
+	short terrainMask = 0b0000; //  nothing
+	short  playerMask = 0b0011; // terrain & enemies
+
+	cout << "Enemy vs. Enemy: " << resolveCollision(enemyLayer, enemyMask) << endl;
+	cout << "Enemy vs. Terrain: " << resolveCollision(terrainLayer, enemyMask) << endl;
+	cout << "Enemy vs. Player: " << resolveCollision(playerLayer, enemyMask) << endl;
+
+	cout << "Terrain vs. Enemy: " << resolveCollision(enemyLayer, terrainMask) << endl;
+	cout << "Terrain vs. Terrain: " << resolveCollision(terrainLayer, terrainMask) << endl;
+	cout << "Terrain vs. Player: " << resolveCollision(playerLayer, terrainMask) << endl;
+
+	cout << "Player vs. Enemy: " << resolveCollision(enemyLayer, playerMask) << endl;
+	cout << "Player vs. Terrain: " << resolveCollision(terrainLayer, playerMask) << endl;
+	cout << "Player vs. Player: " << resolveCollision(playerLayer, playerMask) << endl;
 
 }
