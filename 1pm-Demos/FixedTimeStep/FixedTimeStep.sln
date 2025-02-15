@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35303.130
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FixedTimeStep", "FixedTimeStep.vcxproj", "{53898E57-2762-4159-9148-E94564D62945}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53898E57-2762-4159-9148-E94564D62945}.Debug|x86.ActiveCfg = Debug|Win32
+		{53898E57-2762-4159-9148-E94564D62945}.Debug|x86.Build.0 = Debug|Win32
+		{53898E57-2762-4159-9148-E94564D62945}.Release|x86.ActiveCfg = Release|Win32
+		{53898E57-2762-4159-9148-E94564D62945}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {40362798-EB6A-4F72-970F-9407447F8878}
+	EndGlobalSection
+EndGlobal
