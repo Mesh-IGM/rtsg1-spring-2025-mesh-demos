@@ -21,9 +21,21 @@
     <ClCompile Include="Pet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Toy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Horse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Pet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Toy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Horse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

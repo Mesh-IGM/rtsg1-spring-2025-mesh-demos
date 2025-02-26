@@ -1,23 +1,25 @@
 #pragma once
 
-#include <string>
-
 // class name
 class Pet
 {
 public:
 	// const
 	Pet();
+	Pet(const char* name, unsigned short age, unsigned short numFriends);
 	~Pet();
 
 	// methods
-	void Print();
+	virtual void Print();
+
+	int publicPetField;
 
 // data - fields
 private:
-	std::string name;
+	char* name;
 	unsigned short age;
-	unsigned short numToys;
-	unsigned short* toyIds;
 
+protected:
+	unsigned short numFriends;
+	// vector of friends
 };

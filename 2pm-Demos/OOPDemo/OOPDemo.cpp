@@ -10,6 +10,8 @@ using namespace std;
 #include <crtdbg.h>
 
 #include "Pet.h"
+#include "Toy.h"
+#include "Horse.h"
 
 
 void wrapper();
@@ -26,4 +28,19 @@ int main()
 
 void wrapper()
 {
+	Pet* shiro = new Pet("Shiro", 7, 5);
+	//cout << shiro->age << endl;
+	delete shiro;
+
+	//Toy stick;
+	//cout << stick.price << endl;
+
+	Horse aiden;
+	//cout << aiden.name << endl; // private in Pet
+	//cout << aiden.numFriends << endl; // protected in Pet
+	cout << aiden.publicPetField << endl; // public in Pet
+
+	Horse* cosmo = new Horse("Cosmo", 5, 100, 5);
+	cosmo->Print();
+	delete cosmo;
 }
