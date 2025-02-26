@@ -3,20 +3,25 @@
 #include <string>
 
 // class name
-class Pet
+struct Pet
 {
 public:
 	// const
 	Pet();
+	Pet(std::string name, int age);
 	~Pet();
 
 	// methods
-	void Print();
+	virtual void Print();
+
+	int publicPetField;
 
 // data - fields
 private:
 	std::string name;
 	unsigned short age;
+
+protected:
 	unsigned short numToys;
 	unsigned short* toyIds;
 

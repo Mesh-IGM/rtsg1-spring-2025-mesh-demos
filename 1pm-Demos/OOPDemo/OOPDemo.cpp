@@ -10,7 +10,8 @@ using namespace std;
 #include <crtdbg.h>
 
 #include "Pet.h"
-
+#include "Toy.h"
+#include "Pigeon.h"
 
 void wrapper();
 
@@ -26,4 +27,18 @@ int main()
 
 void wrapper()
 {
+	Toy ball;
+	//cout << ball.name << endl;
+	ball.Print();
+
+	Toy* stick = new Toy("stick", 2.0f);
+	stick->Print();
+	delete stick;
+
+	Pigeon* pudge = new Pigeon("Pudge", 5, "PUDGE");
+	//cout << pudge->name << endl; // private in Pet
+	//cout << pudge->numToys << endl; // protected in Pet
+	cout << pudge->publicPetField << endl; // public in Pet
+
+	pudge->Print();
 }

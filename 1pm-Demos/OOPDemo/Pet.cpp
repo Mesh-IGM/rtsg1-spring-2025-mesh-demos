@@ -7,7 +7,6 @@ typedef unsigned short ushort;
 
 Pet::Pet()
 {
-	cout << "Pet constructor" << endl;
 	name = "Binky";
 	age = 30;
 	numToys = 4;
@@ -19,9 +18,22 @@ Pet::Pet()
 	}
 }
 
+Pet::Pet(std::string name, int age)
+{
+	this->name = name;
+	this->age = age;
+	numToys = 4;
+	toyIds = new ushort[numToys];
+
+	for (ushort i = 0; i < numToys; i++)
+	{
+		toyIds[i] = rand() % 100;
+	}
+
+}
+
 Pet::~Pet()
 {
-	cout << "~Pet destructor" << endl;
 	delete[] toyIds;
 	toyIds = nullptr; // not strictly nec
 }
