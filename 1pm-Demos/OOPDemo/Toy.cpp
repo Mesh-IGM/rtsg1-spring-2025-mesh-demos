@@ -6,7 +6,7 @@ using namespace std;
 Toy::Toy()
 {
 	price = 0.0f;
-	name = new char[6] {"Shiro"};
+	name = new char[6] {"Ball"};
 }
 
 Toy::Toy(const char* _name, float _price)
@@ -24,5 +24,5 @@ Toy::~Toy()
 
 void Toy::Print()
 {
-	cout << "Pet name: " << name << endl;
+	cout << "Toy name: " << name << endl;
 }

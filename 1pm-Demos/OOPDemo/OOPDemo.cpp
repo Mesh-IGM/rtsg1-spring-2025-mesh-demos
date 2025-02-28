@@ -41,4 +41,6 @@ void wrapper()
 	cout << pudge->publicPetField << endl; // public in Pet
 
 	pudge->Print();
+
+	delete pudge;
 }

@@ -6,16 +6,8 @@ using namespace std;
 typedef unsigned short ushort;
 
 Pet::Pet()
+	: Pet("Binky", 30)
 {
-	name = "Binky";
-	age = 30;
-	numToys = 4;
-	toyIds = new ushort[numToys];
-
-	for (ushort i = 0; i < numToys; i++)
-	{
-		toyIds[i] = rand() % 100;
-	}
 }
 
 Pet::Pet(std::string name, int age)
@@ -23,19 +15,25 @@ Pet::Pet(std::string name, int age)
 	this->name = name;
 	this->age = age;
 	numToys = 4;
-	toyIds = new ushort[numToys];
+
+	toys = vector<Toy*>();
 
 	for (ushort i = 0; i < numToys; i++)
 	{
-		toyIds[i] = rand() % 100;
+		toys.push_back(new Toy());
 	}
-
+	for (ushort i = 0; i < numToys; i++)
+	{
+		toys[i]->Print();
+	}
 }
 
 Pet::~Pet()
 {
-	delete[] toyIds;
-	toyIds = nullptr; // not strictly nec
+	for (ushort i = 0; i < numToys; i++)
+	{
+		delete toys[i];
+	}
 }
 
 void Pet::Print()
@@ -44,7 +42,6 @@ void Pet::Print()
 
 	for (ushort i = 0; i < numToys; i++)
 	{
-		cout << toyIds[i] << ", ";
 	}
 	cout << endl;
 }

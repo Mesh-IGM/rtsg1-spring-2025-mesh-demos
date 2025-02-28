@@ -1,6 +1,8 @@
 #pragma once
 
 #include <string>
+#include <vector>
+#include "Toy.h"
 
 // class name
 struct Pet
@@ -23,6 +25,5 @@ private:
 
 protected:
 	unsigned short numToys;
-	unsigned short* toyIds;
-
+	std::vector<Toy*> toys;
 };
