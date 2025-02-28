@@ -8,8 +8,8 @@ Horse::Horse()
 	maxSpeed = 10.0f;
 }
 
-Horse::Horse(const char* name, unsigned short age, unsigned short numFriends, float maxSpeed)
-	: Pet(name, age, numFriends)
+Horse::Horse(const char* name, unsigned short age, float maxSpeed)
+	: Pet(name, age)
 {
 	this->maxSpeed = maxSpeed;
 }

@@ -42,6 +42,6 @@ void Pet::Print()
 
 	for (ushort i = 0; i < numToys; i++)
 	{
+		toys[i]->Print();
 	}
-	cout << endl;
 }

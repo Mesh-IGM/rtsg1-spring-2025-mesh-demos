@@ -1,13 +1,17 @@
 #pragma once
 
+#include <vector>
+
 // class name
 class Pet
 {
 public:
 	// const
 	Pet();
-	Pet(const char* name, unsigned short age, unsigned short numFriends);
+	Pet(const char* name, unsigned short age);
 	~Pet();
+	void AddFriend(Pet* newFriend);
+	char* GetName();
 
 	// methods
 	virtual void Print();
@@ -20,6 +24,5 @@ private:
 	unsigned short age;
 
 protected:
-	unsigned short numFriends;
-	// vector of friends
+	std::vector<Pet*> myFriends;
 };

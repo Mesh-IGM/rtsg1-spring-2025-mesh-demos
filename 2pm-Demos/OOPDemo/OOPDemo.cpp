@@ -13,6 +13,8 @@ using namespace std;
 #include "Toy.h"
 #include "Horse.h"
 
+#include <vector>
+
 
 void wrapper();
 
@@ -28,9 +30,9 @@ int main()
 
 void wrapper()
 {
-	Pet* shiro = new Pet("Shiro", 7, 5);
+	//Pet* shiro = new Pet("Shiro", 7, 5);
 	//cout << shiro->age << endl;
-	delete shiro;
+	//delete shiro;
 
 	//Toy stick;
 	//cout << stick.price << endl;
@@ -40,7 +42,25 @@ void wrapper()
 	//cout << aiden.numFriends << endl; // protected in Pet
 	cout << aiden.publicPetField << endl; // public in Pet
 
-	Horse* cosmo = new Horse("Cosmo", 5, 100, 5);
+	Horse* cosmo = new Horse("Cosmo", 5, 20);
+	//cosmo->Print();
+
+	vector<Horse*> herd = vector<Horse*>();
+	herd.push_back(cosmo);
+	herd.push_back(new Horse("Aiden", 24, 7));
+	herd.push_back(new Horse("Moxie", 18, 7));
+	herd.push_back(new Horse("Whiskey", 7, 7));
+
+	cosmo->AddFriend(herd[1]);
+	cosmo->AddFriend(herd[2]);
+
 	cosmo->Print();
-	delete cosmo;
+
+	for (int i = 0; i < herd.size(); i++)
+	{
+		delete herd[i];
+	}
+	herd.clear();
+
+
 }

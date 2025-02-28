@@ -7,7 +7,7 @@ class Horse
 {
 public:
 	Horse();
-	Horse(const char* name, unsigned short age, unsigned short numFriends, float maxSpeed);
+	Horse(const char* name, unsigned short age, float maxSpeed);
 	void Print() override;
 
 private:
