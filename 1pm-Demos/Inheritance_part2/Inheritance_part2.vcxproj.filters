@@ -24,12 +24,24 @@
     <ClCompile Include="Sorcerer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Cleric.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Multiclass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Sorcerer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cleric.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Multiclass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

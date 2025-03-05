@@ -6,14 +6,14 @@ using namespace std;
 Character::Character() : Character("Bob")
 {
 #ifdef DEBUG_ON
-	cout << "Default Constructor" << endl;
+	cout << "Character Default Constructor" << endl;
 #endif
 }
 
 Character::Character(std::string _name)
 {
 #ifdef DEBUG_ON
-	cout << "Param Constructor for " << _name << endl;
+	cout << "Character Param Constructor for " << _name << endl;
 #endif
 	name = _name;
 }
@@ -21,7 +21,7 @@ Character::Character(std::string _name)
 Character::~Character()
 {
 #ifdef DEBUG_ON
-	cout << "Destructor for " << name << endl;
+	cout << "Character Destructor for " << name << endl;
 #endif
 }
 

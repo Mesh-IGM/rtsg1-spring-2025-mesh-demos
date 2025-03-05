@@ -128,11 +128,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Character.cpp" />
+    <ClCompile Include="Cleric.cpp" />
     <ClCompile Include="Inheritance_part2.cpp" />
+    <ClCompile Include="Multiclass.cpp" />
     <ClCompile Include="Sorcerer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h" />
+    <ClInclude Include="Cleric.h" />
+    <ClInclude Include="Multiclass.h" />
     <ClInclude Include="Sorcerer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
