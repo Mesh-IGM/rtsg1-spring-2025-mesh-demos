@@ -10,10 +10,10 @@ public:
 	Character();
 	Character(std::string _name);
 
-	virtual ~Character(); // don't technically need this
+	/*!*/ virtual ~Character(); // don't technically need this
 
 	virtual void PrintData();
-	/*virtual*/ void PrintType();
+	/*!*/ virtual void PrintType();
 
 	std::string name;
 };

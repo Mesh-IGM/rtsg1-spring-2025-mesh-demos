@@ -6,9 +6,12 @@ using namespace std;
 
 #include "Character.h"
 #include "Sorcerer.h"
+#include "Cleric.h"
+#include "Multiclass.h"
 
 int main()
 {
+	/*
 	Character c1 = Character();
 	c1.PrintData();
 	c1.PrintType();
@@ -34,6 +37,8 @@ int main()
 	s2.PrintType();
 	cout << endl;
 
+	delete cPtr;
+
 	Sorcerer* sPtr = new Sorcerer("Pax", 5);
 	sPtr->PrintData();
 	sPtr->PrintType();
@@ -46,7 +51,25 @@ int main()
 
 	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 
-	delete cPtr;
 	delete cPtrToSorcerer;
 	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	
+	Character* clPtr = new Cleric();
+	clPtr->PrintData();
+	clPtr->PrintType();
+	delete clPtr;
+	*/
+
+	Multiclass* mcPtr = new Multiclass();
+	mcPtr->PrintData();
+	mcPtr->PrintType();
+	cout << endl;
+
+	Character* cMcPtr = mcPtr;
+	cMcPtr->PrintData();
+	cMcPtr->PrintType();
+	cout << endl;
+
+	delete cMcPtr;
+
 }

@@ -1,21 +1,17 @@
 #pragma once
 #include "Character.h"
-
-#include <string>
-
-class Sorcerer :
+class Cleric :
     /*!*/ virtual public Character
 {
 public:
-    Sorcerer();
-    Sorcerer(std::string _name, int _numSpells);
+    Cleric();
+    Cleric(std::string _name, std::string _deity);
 
-    ~Sorcerer();
+    ~Cleric();
 
     void PrintData() override;
     void PrintType() /*!*/override;
 
-    int numSpells;
-
+    std::string deity;
 };
 

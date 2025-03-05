@@ -22,7 +22,7 @@ Sorcerer::Sorcerer(std::string _name, int _numSpells)
 Sorcerer::~Sorcerer()
 {
 #ifdef DEBUG_ON
-	cout << "Sorcerer Destructor" << endl;
+	cout << "Sorcerer Destructor for " << name << endl;
 #endif
 }
 
