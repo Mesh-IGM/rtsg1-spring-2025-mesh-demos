@@ -11,7 +11,8 @@ public:
 	{
 		T myVar;
 		std::cout << "At runtime, 'T' is of type ";
-		std::cout << typeid(myVar).name() << std::endl << std::endl;
+		std::cout << typeid(myVar).name() 
+			<< std::endl << std::endl;
 	}
 };
 
