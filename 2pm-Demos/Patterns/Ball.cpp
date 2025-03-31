@@ -12,9 +12,10 @@ Ball::Ball(unsigned int radius, sf::Color color, sf::Vector2f initPos)
 
 	circle.setFillColor(color);
 
+	int range = MAX_SPEED - MIN_SPEED;
 	velocity = sf::Vector2f(
-		(int)(rand() % MAX_SPEED) + MIN_SPEED,
-		(int)(rand() % MAX_SPEED) + MIN_SPEED
+		(int)(rand() % range) + MIN_SPEED,
+		(int)(rand() % range) + MIN_SPEED
 	);
 
 	if(initPos.x + radius * 2 > WINDOW_WIDTH)
